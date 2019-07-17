@@ -1,3 +1,4 @@
+export IP_PUB=`curl -s ifconfig.me|grep -E -o "([0-9]{1,3}[\.]){3}[0-9]{1,3}"`
 while [ 1 ]; do
 for mess in /data/*
  do
@@ -5,7 +6,7 @@ for mess in /data/*
         then
         NUMBER=`cat $mess|jq .phone|sed "s/\"//g"`
         MESSAGE=`cat $mess|jq .message|sed "s/\"//g"`
-
+        echo $MESSAGE
         curl -H "X-Goog-Api-Key: ${goog_api_key}" \
           -H "Content-Type: application/json; charset=utf-8" \
           --data "{

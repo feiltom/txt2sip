@@ -90,7 +90,7 @@ lib = pjsua.Lib()
 
 try:
     lib.init(log_cfg = pjsua.LogConfig(level=4, callback=log_cb))
-    lib.create_transport(pjsua.TransportType.UDP, pjsua.TransportConfig(5080))
+    lib.create_transport(pjsua.TransportType.UDP, pjsua.TransportConfig(5080,'', os.environ['IP_PUB']))
     lib.set_null_snd_dev()
     lib.start()
     lib.handle_events()
@@ -113,7 +113,7 @@ try:
 
 
     #YOURDESTINATION is landline or mobile number you want to call
-    dst_uri="sip:" + telnum #+ "@"+os.environ['sipsrv']
+    dst_uri="sip:" + telnum + "@"+os.environ['sipsrv']
 
     in_call = True
     lck = lib.auto_lock()
