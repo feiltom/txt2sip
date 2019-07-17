@@ -113,7 +113,7 @@ try:
 
 
     #YOURDESTINATION is landline or mobile number you want to call
-    dst_uri="sip:" + telnum + "@sip.ippi.com"
+    dst_uri="sip:" + telnum + "@"+os.environ['sipsrv']
 
     in_call = True
     lck = lib.auto_lock()
