@@ -15,7 +15,7 @@ RUN cd pjproject-2.6;export CFLAGS="$CFLAGS -fPIC";make
 RUN cd pjproject-2.6;cd pjsip-apps/src/python/;python setup.py install
 
 RUN mkdir /data
-COPY test/sdqdqd-qsddqdq /data/sqdqsdqsd-dqdsq-3323
+#COPY test/sdqdqd-qsddqdq /data/sqdqsdqsd-dqdsq-3323
 COPY Script/sipamos.py /work/sipamos.py
 COPY Script/txt2call.sh /work/txt2call.sh
 CMD [ "sh", "/work/txt2call.sh" ]
