@@ -5,7 +5,7 @@ for mess in /data/*
         if [ ! "$mess" = "/data/*" ]
         then
         NUMBER=`cat $mess|jq .phone|sed "s/\"//g"`
-        MESSAGE=`cat $mess|jq .message|sed "s/\"//g"`
+        MESSAGE=`cat $mess|jq .message|sed "s/\"//g"|sed "s/'//g"`
         echo $MESSAGE
         curl -H "X-Goog-Api-Key: ${goog_api_key}" \
           -H "Content-Type: application/json; charset=utf-8" \
