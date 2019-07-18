@@ -15,7 +15,7 @@ for mess in /data/*
             },
             'voice':{
               'languageCode':'fr-fr',
-              'name':'fr-FR-Wavenet-D'
+              'name':'fr-FR-Wavenet-A'
             },
             'audioConfig':{
               'audioEncoding':'LINEAR16'
